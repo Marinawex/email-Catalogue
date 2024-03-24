@@ -1,0 +1,177 @@
+{*include 'content:lenses_reorder_logic' scope='parent' assign='blackhole'*}
+{include 'content:contacts_name' scope='parent' assign='blackhole'}
+{if $contact.is_loyalty|lower == 'true'}
+  <tr>
+     <td align="center" style="font-size:0;padding: 20px 0 15px 0;" valign="top">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+           <tbody>
+              <tr width="600">
+                 <td style="text-align: center;">
+                    <a data-crdl-key="Main Banner Header Link" href="https://www.glassesusa.com/?utm_source=newsletter&utm_medium=newsletter_link&utm_content=main_banner&utm_content=header_coupon_redeem&utm_campaign={$message.name}" title="GlassesUSA.com">
+                    <img alt="GlassesUSA.com" src="https://s3.us-east-1.amazonaws.com/files.glassesusa.com/loyalty_club_assets/loyalty_club_logo_white_bg.png" style="border: 0;width: 100%;max-width: 300px; color: #1f2e61; font-size: 28px;" width="300"/>
+                    </a>
+                 </td>
+              </tr>
+    {else}
+      <tr>
+        <td align="center" style="font-size:0;padding: 20px 0 15px 0;" valign="top">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+           <tbody>
+              <tr width="600">
+                 <td style="text-align: center;">
+                    <a data-crdl-key="Main Banner Header Link" href="https://www.glassesusa.com/?utm_source=newsletter&utm_medium=newsletter_link&utm_content=main_banner&utm_content=header_coupon_redeem&utm_campaign={$message.name}" title="GlassesUSA.com">
+                    <img alt="GlassesUSA.com" src="https://static.glassesusa.com/skin/frontend/default/optimax/images/logo.png" style="border: 0;width: 100%;max-width: 187px; color: #1f2e61; font-size: 28px;" width="187"/>
+                    </a>
+                 </td>
+            </tr>
+      {/if}
+            <tr width="600">
+               <td class="mktfontsizemobile" style="width: 600px; text-align: center;font-family:'Roboto', 'Arial';font-size: 20px;mso-height-rule: exactly;line-height: 20px;color: #2d2d2d;padding: 15px 0 18px 0;font-weight: 600;">
+                  <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+                     <tbody>
+                        <tr width="600">
+                           <td style="text-align: center;" width="40px">
+                              <span class="mktfontsizemobileline" style="color: #ffffff;font-weight: 300;font-size: 18px;"> |
+                              </span>
+                           </td>
+                           <td style="text-align: center;font-weight: 700;" width="100px">
+                              <a data-crdl-key="Eyeglasses Header Link" href="https://www.glassesusa.com//eyeglasses-collection/?utm_source=newsletter&utm_medium=newsletter_link&utm_content=eyeglasses_top_banner&utm_content=header_coupon_redeem&utm_campaign={$message.name}" style="color: #2d2d2d; text-decoration: none;">Eyeglasses </a>
+                           </td>
+                           <td style="text-align: center;" width="40px">
+                              <span class="mktfontsizemobileline" style="color: #c1c1c1;font-weight: 300;font-size: 18px;"> |
+                              </span>
+                           </td>
+                           <td style="text-align: center;font-weight: 700;" width="100px">
+                              <a data-crdl-key="Sunglasses Header Link" href="https://www.glassesusa.com/sunglasses/?utm_source=newsletter&utm_medium=newsletter_link&utm_content=sunglasses_top_banner&utm_content=header_coupon_redeem&utm_campaign={$message.name}" style="color: #2d2d2d; text-decoration: none;"> Sunglasses </a>
+                           </td>
+                           <td style="text-align: center;" width="40px">
+                              <span class="mktfontsizemobileline" style="color: #c1c1c1;font-weight: 300;font-size: 18px;"> |
+                              </span>
+                           </td>
+                           <td style="text-align: center;font-weight: 700;" width="100px">
+                              <a data-crdl-key="Contacts Header Link" href="https://www.glassesusa.com/contact-lenses/?utm_source=newsletter&utm_medium=newsletter_link&utm_content=contacts_top_banner&utm_content=header_coupon_redeem&utm_campaign={$message.name}" style="color: #2d2d2d;text-decoration: none;"> Contacts</a>
+                           </td>
+                           <td style="text-align: center;" width="40px">
+                              <span class="mktfontsizemobileline" style="color: #c1c1c1;font-weight: 300;font-size: 18px;"> |
+                              </span>
+                           </td>
+                           <td style="text-align: center;font-weight: 700;" width="50px">
+                              <a data-crdl-key="Sale Header Link" href="https://www.glassesusa.com/discounted-eyeglasses?utm_source=newsletter&amp;utm_medium=newsletter_link&amp;utm_content=contacts_top_banner&amp;utm_content=header_coupon_redeem&utm_campaign={$message.name}" style="color: #f22a42;text-decoration: none;">Sale</a>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </td>
+</tr>
+
+{$qreg=$utils->getEventRecords("quiz results registered", "-21 day"|date_format:"Y-m-d\TH:i:sO")}  {$qnew=$utils->getEventRecords("quiz results", "-21 day"|date_format:"Y-m-d\TH:i:sO")}
+
+{if $contact.is_loyalty|lower == 'true' && {$contact.loyalty_coupon}} 
+<tr>
+  <td>
+    <table style="width:600px;" align="center">
+      <tbody>
+        <tr>
+          <td>
+            <hr>
+            <p style="text-align:center; width:100%;font-family:'Roboto', 'Arial';display:block;background:white;font-size:16px;">
+            <table style="width:100%;">
+              <tbody>
+                <tr colspan="2">
+                  <td style="text-align:left;padding-left:10px;width:80%;font-family:'Roboto', 'Arial';font-size:16px;">
+                    <b>$15</b> Extra Credit! Code: <b style="background:#F3C55D;border-radius:4px;padding: 2px 8px;">{$contact.loyalty_coupon}</b>
+                  </td>
+                  <td style="text-align:right;padding-right:10px;width: 20%;font-family:'Roboto', 'Arial';">
+                    <span style="display:inline-block;font-size:16px;font-family:'Roboto', 'Arial';">{$contact.firstname|capitalize}</span>
+                    <span style="display:inline-block;font-size:20px;color:#F3C55D;font-family:'Roboto', 'Arial';">&#9733;</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            </p>
+            <hr>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </td>
+</tr>
+{elseif not empty($contact.quiz_results_new) or not empty($contact.quiz_results_registered) && {$qreg or $qnew}}
+  <tr width="600">
+   <td class="mktfontsizemobile" style="width: 600px; text-align: center;font-family: Arial,Helvetica Neue,Helvetica,sans-serif;font-size: 20px;mso-height-rule: exactly;line-height: 20px;color: #2d2d2d;padding: 15px 0 15px 0;font-weight: 600;">
+      <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" style="padding-top: 5px;">
+         <tbody>
+            <tr width="600">
+               <td width="100px" style="font-size: 20px;text-align: center;font-weight: 700;line-height: 27px;">
+                  <a href="https://www.glassesusa.com{if not empty($contact.quiz_results_new)}{$contact.quiz_results_new}{else}{$contact.quiz_results_registered}{/if}?utm_source=newsletter&utm_medium=Contacts_reorder_header&utm_campaign={$message.name}"
+                     data-crdl-key="Header_Link_Quiz" style="color: #000000;text-decoration: underline;">{if $contact.firstname}{$contact.firstname|capitalize}, Y{else}Y{/if}our perfect pair is waiting - check out your quiz results!
+
+
+                  </a>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </td>
+</tr>
+{elseif not empty($contacts_name) && not empty($contacts_url)}
+<tr width="600">
+   <td class="mktfontsizemobile" style="width: 600px; text-align: center;font-family: Arial,Helvetica Neue,Helvetica,sans-serif;font-size: 20px;mso-height-rule: exactly;line-height: 20px;color: #2d2d2d;padding: 15px 0 15px 0;font-weight: 600;">
+      <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" style="padding-top: 5px;">
+         <tbody>
+            <tr width="600">
+               <td width="100px" style="font-size: 20px;text-align: center;font-weight: 700;line-height: 27px;">
+                  <a href="{$contacts_url}?utm_source=newsletter&utm_medium=Contacts_reorder_header&utm_campaign={$message.name}"
+                     data-crdl-key="Header_Link_Reorder" style="color: #000000;text-decoration: underline;">{if $contact.firstname}{$contact.firstname|capitalize}, r{else}R{/if}eorder your {$contacts_name} lenses now, just one click
+                  </a>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </td>
+</tr>
+{elseif $contact.cart.cartitem}
+{include 'content:header_cart_text_logic'}
+{*
+<!--{elseif in_array('Home_Try_On', $contact.lists)}-->
+<!--     <tr width="600">-->
+<!--         <td class="mktfontsizemobile" style="width: 600px; text-align: center;font-family: Arial,Helvetica Neue,Helvetica,sans-serif;font-size: 17px;mso-height-rule: exactly;line-height: 20px;color: #2d2d2d;padding: 15px 0 0px 0;font-weight: 600;">-->
+<!--             <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" style="padding-top: 5px;">-->
+<!--                 <tbody>-->
+<!--                     <tr>-->
+<!--                         <td align="center">-->
+<!--                             <a style="color:#2b2b2b;font-size:60px;" title="hto" href="https://www.glassesusa.com/eyeglasses-collection?htoEnabled=1&utm_source=newsletter&utm_medium=newsletter_header&utm_content=header_HTO&utm_campaign={$message.name}" data-crdl-key="hto_strip">-->
+<!--                                 <img src='https://s3.us-east-1.amazonaws.com/files.glassesusa.com/hto_2022/htoStrip.jpg' border="0" alt="hto" style="display: block;max-width: 595px; border: 2px solid  #00B169; ">-->
+<!--                             </a>-->
+<!--                 </td>-->
+<!--                 </tr>-->
+<!--             </tbody>-->
+<!--         </table>-->
+<!--     </td>-->
+<!--     </tr>-->
+*}
+{else}
+<tr width="600">
+   <td class="mktfontsizemobile" style="width: 600px; text-align: center;font-family: Arial,Helvetica Neue,Helvetica,sans-serif;font-size: 20px;mso-height-rule: exactly;line-height: 20px;color: #2d2d2d;padding: 15px 0 15px 0;font-weight: 600;">
+      <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" style="padding-top: 5px;">
+         <tbody>
+            <tr width="600">
+              <!--Delated width:100px-->
+               <td style="font-size: 20px;text-align: center;font-weight: 700;line-height: 27px;">
+
+      
+                    <a href="https://www.glassesusa.com/eyeglasses-collection?utm_source=newsletter&utm_medium=newsletter_header&utm_content=header_coupon_redeem_progressives&utm_campaign={$message.name}"
+                       data-crdl-key="regular Header-Link 1302" style="color: #0563C1;text-decoration: underline;">{if $contact.firstname}{$contact.firstname|capitalize}, y{else}Y{/if}ou have 2 coupons waiting on our site! | Redeem Now
+                    </a>
+                 
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </td>
+</tr>
+{/if}
